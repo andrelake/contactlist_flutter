@@ -1,3 +1,4 @@
+import 'package:contactlist_flutter/screens/home.screen.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -9,11 +10,7 @@ class ContactListApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: Scaffold(
-        appBar: AppBar(
-          title: Text('First page'),
-        ),
-      ),
+      home: HomeScreen()
     );
   }
 }
