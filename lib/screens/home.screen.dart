@@ -1,3 +1,4 @@
+import 'package:contactlist_flutter/screens/contact_list.screen.dart';
 import 'package:flutter/material.dart';
 
 const String imgSrc = 'images/logo.webp';
@@ -24,27 +25,31 @@ class HomeScreen extends StatelessWidget {
           ),
           Padding(
             padding: const EdgeInsets.fromLTRB(24.0, 0, 0, 16.0),
-            child: Container(
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(10),
-                color: Colors.blueAccent,
-                boxShadow: [
-                  BoxShadow(color: Colors.blueAccent, spreadRadius: 3)
-                ]
-              ),
-              height: 100,
-              width: 140,
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  Icon(Icons.perm_contact_calendar_outlined, color: Colors.white,),
-                  Text('Contacts',
-                    style: TextStyle(
-                        color: Colors.white,
-                        fontWeight: FontWeight.w400,
-                        fontSize: 16),
-                  )
-                ],
+            child: Material(
+              borderRadius: BorderRadius.circular(10),
+              color: Colors.blueAccent,
+              child: InkWell(
+                onTap: () {
+                  Navigator.of(context).push(
+                      MaterialPageRoute(builder: (context) => ContactList())
+                  );
+                },
+                child: Container(
+                  height: 100,
+                  width: 140,
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+                      Icon(Icons.perm_contact_calendar_outlined, color: Colors.white,),
+                      Text('Contacts',
+                        style: TextStyle(
+                            color: Colors.white,
+                            fontWeight: FontWeight.w400,
+                            fontSize: 16),
+                      )
+                    ],
+                  ),
+                ),
               ),
             ),
           )
