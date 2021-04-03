@@ -1,8 +1,5 @@
-import 'package:contactlist_flutter/db/app_database.dart';
 import 'package:contactlist_flutter/screens/home.screen.dart';
 import 'package:flutter/material.dart';
-
-import 'models/contact.model.dart';
 
 void main() {
   runApp(ContactListApp());

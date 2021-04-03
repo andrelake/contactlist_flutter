@@ -1,7 +1,7 @@
 import 'package:contactlist_flutter/components/card_contact.component.dart';
-import 'package:contactlist_flutter/db/app_database.dart';
 import 'package:contactlist_flutter/models/contact.model.dart';
 import 'package:contactlist_flutter/screens/contact_form.screen.dart';
+import 'package:contactlist_flutter/dao/contact.dao.dart';
 import 'package:flutter/material.dart';
 
 class ContactList extends StatefulWidget {
@@ -10,6 +10,8 @@ class ContactList extends StatefulWidget {
 }
 
 class _ContactListState extends State<ContactList> {
+  final ContactDao _dao = ContactDao();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -18,7 +20,7 @@ class _ContactListState extends State<ContactList> {
       ),
       body: FutureBuilder<List<Contact>>(
         initialData: [],
-        future: findAll(),
+        future: _dao.findAll(),
         builder: (context, snapshot) {
           switch(snapshot.connectionState) {
             case ConnectionState.none:
