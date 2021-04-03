@@ -4,7 +4,12 @@ import 'package:contactlist_flutter/models/contact.model.dart';
 import 'package:contactlist_flutter/screens/contact_form.screen.dart';
 import 'package:flutter/material.dart';
 
-class ContactList extends StatelessWidget {
+class ContactList extends StatefulWidget {
+  @override
+  _ContactListState createState() => _ContactListState();
+}
+
+class _ContactListState extends State<ContactList> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -50,9 +55,8 @@ class ContactList extends StatelessWidget {
         child: Icon(Icons.add),
         onPressed: () {
           Navigator.of(context).push(
-              MaterialPageRoute(builder: (context) => ContactForm()
-              ),
-          ).then((contact) => debugPrint(contact.toString()));
+              MaterialPageRoute(builder: (context) => ContactForm())
+          ).then((value) => setState(() {}));
         },
       ),
     );

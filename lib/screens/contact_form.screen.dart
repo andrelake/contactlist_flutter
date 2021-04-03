@@ -1,3 +1,4 @@
+import 'package:contactlist_flutter/db/app_database.dart';
 import 'package:contactlist_flutter/models/contact.model.dart';
 import 'package:contactlist_flutter/screens/contact_list.screen.dart';
 import 'package:flutter/material.dart';
@@ -49,9 +50,9 @@ class _ContactFormState extends State<ContactForm> {
                       final String name = _nameController.text;
                       final int phoneNumber = int.tryParse(_phoneNumberController.text);
 
-                      final Contact contact = Contact(0, name, phoneNumber);
-
-                      Navigator.pop(context, contact);
+                      final Contact newContact = Contact(0, name, phoneNumber);
+                      save(newContact)
+                        .then((id) => Navigator.pop(context));
                     },
                     child: Text('Confirm')
                 ),
