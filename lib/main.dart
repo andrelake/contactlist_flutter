@@ -6,8 +6,6 @@ import 'models/contact.model.dart';
 
 void main() {
   runApp(ContactListApp());
-  findAll()
-    .then((contacts) => debugPrint(contacts.toString()));
 }
 
 class ContactListApp extends StatelessWidget {
