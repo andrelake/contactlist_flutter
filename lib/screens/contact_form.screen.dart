@@ -49,7 +49,7 @@ class _ContactFormState extends State<ContactForm> {
                       final String name = _nameController.text;
                       final int phoneNumber = int.tryParse(_phoneNumberController.text);
 
-                      final Contact contact = Contact(name, phoneNumber);
+                      final Contact contact = Contact(0, name, phoneNumber);
 
                       Navigator.pop(context, contact);
                     },
